@@ -9,13 +9,17 @@ RUN \
 RUN \
     apt-get install -y python python-dev python-pip python-virtualenv
 
-# Install ssh git vim
-RUN \
-    apt-get install -y ssh git vim
-
 # Install crypto.
 RUN \
     apt-get install -y build-essential libssl-dev libffi-dev
+
+# Install ssh git vim
+RUN \
+    apt-get install -y ssh git vim locales
+
+# Config chinese char
+RUN \
+    locale-gen "zh_CN.UTF-8" && echo "export LANG=zh_CN.UTF-8" >> /etc/bash.bashrc
 
 # Configs for git
 RUN \
