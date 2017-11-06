@@ -13,6 +13,10 @@ RUN \
 RUN \
     apt-get install -y ssh git vim
 
+# Install crypto.
+RUN \
+    apt-get install -y build-essential libssl-dev libffi-dev
+
 # Configs for git
 RUN \
     echo '[user]\n\
